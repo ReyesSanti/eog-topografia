@@ -406,11 +406,11 @@ export const MAX_UPLOAD_MB = 25
 // nombres de los archivos.
 export const WEB3FORMS_ACCESS_KEY = '21754d3c-1237-4ac8-a720-8205ca5e97f9'
 
-// hCaptcha (anti-bots). La SITE KEY es pública (va aquí). La SECRET va SOLO en el
-// panel de Web3Forms (Settings → hCaptcha) — NUNCA en el código.
-// IMPORTANTE: para que los envíos no sean rechazados, la SECRET debe estar
-// configurada en Web3Forms antes de usar el formulario en producción.
-export const HCAPTCHA_SITE_KEY = '1004ac42-fc26-4a70-80f2-0148651615de'
+// hCaptcha (anti-bots). En el plan GRATUITO de Web3Forms se usa su SITE KEY
+// compartida; Web3Forms verifica el token automáticamente (no hay que configurar
+// ninguna secret ni panel). Usar llaves propias de hCaptcha es función Pro.
+// Ref: https://docs.web3forms.com → Spam Protection → hCaptcha.
+export const HCAPTCHA_SITE_KEY = '50b2fe65-b00b-4b9e-ad62-3ba471098be2'
 
 // WhatsApp (botón flotante). Número en formato internacional sin "+" ni espacios:
 // Colombia +57 + 322 721 7150.

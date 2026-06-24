@@ -30,9 +30,10 @@ npx vercel --prod # despliegue a producción
 ## Configuración (claves y servicios)
 - **Web3Forms** (`WEB3FORMS_ACCESS_KEY` en `src/data/content.js`): clave PÚBLICA. En el panel de
   Web3Forms restringe los *dominios permitidos* a tu dominio de producción.
-- **hCaptcha** (`HCAPTCHA_SITE_KEY` en `src/data/content.js`): site key PÚBLICA. La *secret key*
-  va SOLO en el panel de Web3Forms (Settings → hCaptcha), nunca en el código. Añade tus hostnames
-  (dominio + localhost) en el panel de hCaptcha.
+- **hCaptcha** (`HCAPTCHA_SITE_KEY` en `src/data/content.js`): en el plan gratuito se usa la site
+  key compartida de Web3Forms (`50b2fe65-b00b-4b9e-ad62-3ba471098be2`); Web3Forms verifica el
+  captcha automáticamente, **sin secret ni configuración adicional**. (Usar llaves propias de
+  hCaptcha es función Pro de Web3Forms.)
 - **WhatsApp** (`WHATSAPP` en `src/data/content.js`): número del botón flotante.
 
 ## Imágenes

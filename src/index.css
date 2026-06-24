@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  /* Paleta fiel a los mockups */
+  --color-forest: #2b3227;
+  --color-forest-700: #353d2c;
+  --color-forest-600: #404834;
+  --color-accent: #6f8f2f;
+  --color-accent-dark: #5c7726;
+  --color-accent-light: #8fae4d;
+  --color-cream: #f4f1e8;
+  --color-cream-dark: #ece7da;
+  --color-ink: #262a24;
+  --color-muted: #6c7065;
+  --color-line: #e4e0d4;
+
+  --font-sans: "Inter Variable", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Manrope Variable", "Manrope", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-ink font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-accent;
+  }
+
+  .container-x {
+    @apply mx-auto w-full max-w-[1240px] px-6 lg:px-10;
+  }
+}

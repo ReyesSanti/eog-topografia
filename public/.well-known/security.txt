@@ -1,0 +1,4 @@
+# Divulgación responsable de vulnerabilidades — EOG Topografía
+Contact: mailto:santiagodariog@gmail.com
+Expires: 2027-06-24T00:00:00.000Z
+Preferred-Languages: es, en

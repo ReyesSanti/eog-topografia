@@ -13,6 +13,9 @@ dist-ssr/
 # Vercel
 .vercel/
 
+# Config local del editor / agente
+.claude/
+
 # Logs y temporales
 *.log
 npm-debug.log*

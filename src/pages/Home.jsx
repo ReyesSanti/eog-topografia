@@ -11,15 +11,16 @@ export default function Home() {
           <img
             src="/images/hero.jpg"
             alt="Equipo de topografía de EOG: GPS RTK, estación total, dron y maletín sobre un valle al atardecer"
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover object-[72%_center] lg:object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-forest via-forest/80 to-forest/10" />
-          <div className="absolute inset-0 bg-gradient-to-t from-forest/70 via-transparent to-forest/30" />
+          {/* Móvil: degradado vertical que deja ver la foto · Desktop: horizontal */}
+          <div className="absolute inset-0 bg-gradient-to-b from-forest/85 via-forest/35 to-forest/85 lg:bg-gradient-to-r lg:from-forest lg:via-forest/80 lg:to-forest/10" />
+          <div className="absolute inset-0 hidden bg-gradient-to-t from-forest/70 via-transparent to-forest/30 lg:block" />
         </div>
 
         {/* Contenido */}
-        <div className="container-x relative flex flex-1 items-center pt-28 pb-44">
-          <div className="max-w-2xl">
+        <div className="container-x relative flex flex-1 items-center pt-28 pb-24 lg:pb-44">
+          <div className="max-w-2xl [text-shadow:0_2px_18px_rgba(15,20,12,0.55)] lg:[text-shadow:none]">
             <span className="eyebrow text-accent-light">
               EOG Topografía <span className="text-accent-light/60">•</span> Precisión{' '}
               <span className="text-accent-light/60">•</span> Tecnología

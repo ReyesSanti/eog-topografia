@@ -13,6 +13,30 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://eogtopografia.com/servicios/gps-rtk</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eogtopografia.com/servicios/drones</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eogtopografia.com/servicios/gnss</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://eogtopografia.com/servicios/procesamiento</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://eogtopografia.com/proyectos</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>

@@ -5,6 +5,7 @@ import ScrollToTop from './components/ScrollToTop.jsx'
 import WhatsAppFloat from './components/WhatsAppFloat.jsx'
 import Home from './pages/Home.jsx'
 import Servicios from './pages/Servicios.jsx'
+import ServicioDetalle from './pages/ServicioDetalle.jsx'
 import Proyectos from './pages/Proyectos.jsx'
 import Equipo from './pages/Equipo.jsx'
 import Contacto from './pages/Contacto.jsx'
@@ -22,6 +23,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/servicios" element={<Servicios />} />
+          <Route path="/servicios/:slug" element={<ServicioDetalle />} />
           <Route path="/proyectos" element={<Proyectos />} />
           <Route path="/equipo" element={<Equipo />} />
           <Route path="/contacto" element={<Contacto />} />

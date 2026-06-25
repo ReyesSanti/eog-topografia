@@ -85,7 +85,8 @@ raíz/
 | Ruta | Página | Notas |
 |---|---|---|
 | `/` | `Home.jsx` | Hero con foto de fondo; Navbar **transparente** solo aquí |
-| `/servicios` | `Servicios.jsx` | Tarjetas + sección Tecnología (`#tecnologia`) + proceso + CTA |
+| `/servicios` | `Servicios.jsx` | Tarjetas (clickeables) + sección Tecnología (`#tecnologia`) + proceso + CTA |
+| `/servicios/:slug` | `ServicioDetalle.jsx` | Detalle de cada servicio (`gps-rtk`, `drones`, `gnss`, `procesamiento`); datos en `services[]` de content.js |
 | `/proyectos` | `Proyectos.jsx` | Botón "Ver más proyectos" despliega galería (`useState`) |
 | `/equipo` | `Equipo.jsx` | ¿Por qué elegirnos? + CtaBanner |
 | `/contacto` | `Contacto.jsx` | Info + `<QuoteForm/>` |
@@ -105,7 +106,8 @@ Exporta arrays/objetos que alimentan las páginas. Edita aquí para cambiar text
 |---|---|---|
 | `navLinks` | Navbar/Footer | enlaces del menú |
 | `heroMini`, `homeBar` | Home | mini-features del hero / barra inferior |
-| `services`, `servicesStripLead`, `servicesStripItems` | Servicios | 4 tarjetas + tira |
+| `services` | Servicios + ServicioDetalle | 4 servicios: campos de tarjeta (Icon/title/desc/image/**slug**) + de detalle (tagline, intro, applications, equipment, **deliverables**=formatos, precision) |
+| `servicesStripLead`, `servicesStripItems` | Servicios | tira de confianza |
 | `techDetails`, `processSteps`, `specificServices`, `CheckIcon` | Servicios | sección Tecnología/proceso |
 | `projects`, `moreProjects`, `projectBadges`, `stats` | Proyectos | proyectos + galería + stats |
 | `equipoFeatures`, `statsEquipo` | Equipo | features + stats |

@@ -61,31 +61,130 @@ export const homeBar = [
   },
 ]
 
-/* ---------- Servicios ---------- */
+/* ---------- Servicios ----------
+ * Cada servicio tiene datos para la tarjeta (Icon, title, desc, image) y para
+ * su página de detalle (/servicios/:slug): tagline, intro, applications,
+ * equipment, deliverables (formatos de entrega), precision. */
 export const services = [
   {
     Icon: IconTripod,
+    slug: 'gps-rtk',
     title: 'GPS RTK',
-    desc: 'Levantamientos con alta precisión en tiempo real para proyectos que requieren exactitud milimétrica.',
+    desc: 'Levantamientos con alta precisión en tiempo real para proyectos que requieren exactitud centimétrica.',
     image: '/images/service-gpsrtk.jpg',
+    tagline: 'Precisión centimétrica en tiempo real',
+    intro:
+      'El GPS RTK (Real-Time Kinematic) corrige la señal GNSS en tiempo real mediante una base y un rover —o redes CORS/NTRIP—, entregando posiciones con precisión centimétrica al instante en campo. Ideal para proyectos que exigen exactitud y rapidez.',
+    precision: '± 1–2 cm',
+    applications: [
+      'Replanteo de obras civiles',
+      'Levantamiento de linderos y predios',
+      'Vías y diseño geométrico',
+      'Control geodésico y georreferenciación',
+      'Urbanismo y loteos',
+    ],
+    equipment: [
+      'Receptores GNSS de doble frecuencia (multiconstelación)',
+      'Configuración base + rover o conexión NTRIP/CORS',
+      'Colectora con software de campo',
+    ],
+    deliverables: [
+      'Coordenadas de puntos (CSV / TXT: Norte, Este, Cota)',
+      'Planos en CAD (DWG / DXF)',
+      'Archivos KML / KMZ para Google Earth',
+      'Informe técnico (PDF) con metodología',
+      'Datos en MAGNA-SIRGAS (origen oficial de Colombia)',
+    ],
   },
   {
     Icon: IconDrone,
+    slug: 'drones',
     title: 'DRONES',
     desc: 'Fotogrametría y mapeo 3D de grandes extensiones con eficiencia y seguridad.',
     image: '/images/service-drones.jpg',
+    tagline: 'Cobertura aérea y modelos 3D de alta resolución',
+    intro:
+      'Con drones (RPAS) y puntos de control en tierra (GCP) capturamos cientos de imágenes que procesamos por fotogrametría para generar ortomosaicos, nubes de puntos y modelos del terreno. Cubrimos grandes extensiones de forma rápida y segura.',
+    precision: '2–5 cm con GCP',
+    applications: [
+      'Levantamiento de grandes áreas',
+      'Cálculo de volúmenes (minería, acopios, movimientos de tierra)',
+      'Seguimiento y control de avance de obra',
+      'Ortomosaicos y catastro',
+      'Zonas de difícil acceso',
+    ],
+    equipment: [
+      'Dron con GNSS RTK/PPK',
+      'Puntos de control terrestre (GCP) con GNSS',
+      'Software fotogramétrico',
+    ],
+    deliverables: [
+      'Ortomosaico georreferenciado (GeoTIFF / JPG)',
+      'Nube de puntos (LAS / LAZ)',
+      'Modelo digital de superficie y de terreno (MDS / MDT, GeoTIFF)',
+      'Curvas de nivel (DWG / DXF)',
+      'Modelo 3D (OBJ) y reporte de volúmenes (PDF)',
+    ],
   },
   {
     Icon: IconGnss,
+    slug: 'gnss',
     title: 'GNSS',
     desc: 'Posicionamiento global confiable para control, monitoreo y análisis geoespacial.',
     image: '/images/service-gnss.jpg',
+    tagline: 'Posicionamiento geodésico confiable',
+    intro:
+      'El posicionamiento GNSS (estático y post-procesado) establece puntos de control de alta exactitud, georreferencia proyectos y permite monitoreo. Es la base geodésica sobre la que se apoya todo levantamiento.',
+    precision: 'Milimétrica a centimétrica (post-proceso)',
+    applications: [
+      'Redes y puntos de control geodésico',
+      'Georreferenciación de proyectos',
+      'Deslindes y amojonamiento',
+      'Monitoreo de estructuras y deformaciones',
+      'Enlace a la red MAGNA-SIRGAS',
+    ],
+    equipment: [
+      'Receptores GNSS de doble/triple frecuencia',
+      'Observación estática y post-proceso (PPK)',
+      'Vínculo a estaciones de referencia (CORS/IGS)',
+    ],
+    deliverables: [
+      'Archivos crudos RINEX',
+      'Coordenadas geodésicas y planas (MAGNA-SIRGAS)',
+      'Informe de ajuste y cierre',
+      'Monografía/certificado de puntos de control',
+      'Reporte de precisión (PDF)',
+    ],
   },
   {
     Icon: IconProcessing,
+    slug: 'procesamiento',
     title: 'PROCESAMIENTO',
     desc: 'Procesamiento de datos avanzado y generación de planos, modelos y reportes técnicos.',
     image: '/images/service-procesamiento.jpg',
+    tagline: 'Del dato de campo a planos y modelos listos para diseño',
+    intro:
+      'En gabinete depuramos, procesamos y modelamos la información capturada para entregar planos, modelos digitales y reportes técnicos listos para ingeniería y diseño, en los formatos que tu proyecto necesite.',
+    precision: null,
+    applications: [
+      'Planos topográficos planimétricos y altimétricos',
+      'Modelos digitales de terreno (MDT/MDE)',
+      'Curvas de nivel, perfiles y secciones',
+      'Cálculo de volúmenes y movimientos de tierra',
+      'Conversión y depuración de datos',
+    ],
+    equipment: [
+      'AutoCAD / Civil 3D',
+      'Software GIS (QGIS)',
+      'Software de procesamiento GNSS y fotogrametría',
+    ],
+    deliverables: [
+      'Planos en CAD (DWG / DXF)',
+      'Modelos para diseño (LandXML)',
+      'Capas GIS (SHP / GeoJSON / KML)',
+      'Cálculos en Excel (volúmenes, áreas)',
+      'Planos y reportes en PDF',
+    ],
   },
 ]
 

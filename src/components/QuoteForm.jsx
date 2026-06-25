@@ -6,7 +6,6 @@ import {
   serviceOptions,
   CONTACT_EMAIL,
   MAX_UPLOAD_MB,
-  WEB3FORMS_ACCESS_KEY,
   HCAPTCHA_SITE_KEY,
 } from '../data/content.js'
 
@@ -74,40 +73,29 @@ export default function QuoteForm() {
     }
 
     const val = (k) => (data[k] || '').toString().trim()
-    const subject = `Solicitud de cotización — ${val('servicio') || 'General'} · ${
-      val('nombre') || 'Sin nombre'
-    }`
 
     setSending(true)
     setError('')
     try {
-      // Payload JSON (UTF-8) con claves ASCII para que los acentos se vean bien
-      // en el correo y el encabezado del teléfono no salga como "TelÃ©fono".
+      // Enviamos a nuestra función serverless (api/contact), que verifica el
+      // captcha y manda el correo branded vía Resend.
       const payload = {
-        access_key: WEB3FORMS_ACCESS_KEY,
-        subject,
-        from_name: 'EOG Topografía · Formulario web',
-        botcheck: false,
-        replyto: val('email'),
-        Nombre: val('nombre'),
-        Empresa: val('empresa') || '—',
-        Correo: val('email'),
-        Telefono: val('telefono'),
-        'Tipo de servicio': val('servicio'),
-        Mensaje: val('mensaje'),
-      }
-      if (files.length) {
-        payload['Archivos del cliente'] = files
-          .map((f) => `${f.name} (${mb(f.size)} MB)`)
-          .join('\n')
-      }
-      if (HCAPTCHA_ENABLED && captchaToken) {
-        payload['h-captcha-response'] = captchaToken
+        nombre: val('nombre'),
+        empresa: val('empresa'),
+        email: val('email'),
+        telefono: val('telefono'),
+        servicio: val('servicio'),
+        mensaje: val('mensaje'),
+        archivos: files.length
+          ? files.map((f) => `${f.name} (${mb(f.size)} MB)`).join('\n')
+          : '',
+        website: val('website'),
+        captcha: captchaToken,
       }
 
-      const res = await fetch('https://api.web3forms.com/submit', {
+      const res = await fetch('/api/contact', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
       })
       const json = await res.json()

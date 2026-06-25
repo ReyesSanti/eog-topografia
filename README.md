@@ -28,12 +28,20 @@ npx vercel --prod # despliegue a producción
 ```
 
 ## Configuración (claves y servicios)
-- **Web3Forms** (`WEB3FORMS_ACCESS_KEY` en `src/data/content.js`): clave PÚBLICA. En el panel de
-  Web3Forms restringe los *dominios permitidos* a tu dominio de producción.
-- **hCaptcha** (`HCAPTCHA_SITE_KEY` en `src/data/content.js`): en el plan gratuito se usa la site
-  key compartida de Web3Forms (`50b2fe65-b00b-4b9e-ad62-3ba471098be2`); Web3Forms verifica el
-  captcha automáticamente, **sin secret ni configuración adicional**. (Usar llaves propias de
-  hCaptcha es función Pro de Web3Forms.)
+El formulario se envía a la función serverless `api/contact.js`, que verifica el captcha y manda
+un **correo HTML con la marca** vía **Resend**.
+
+**Variables de entorno en Vercel** (Project → Settings → Environment Variables; ver `.env.example`):
+- `RESEND_API_KEY` — clave de Resend (https://resend.com/api-keys).
+- `HCAPTCHA_SECRET` — secret de hCaptcha (panel de hCaptcha). Solo en el servidor, nunca en el cliente.
+- `CONTACT_TO_EMAIL` (opcional) — correo destino; por defecto `santiagodariog@gmail.com`.
+- `MAIL_FROM` (opcional) — remitente; por defecto `onboarding@resend.dev`. Para usar
+  `contacto@eogtopografia.com`, verifica el dominio en Resend.
+
+- **hCaptcha** (`HCAPTCHA_SITE_KEY` en `src/data/content.js`): site key PÚBLICA. Añade tus
+  hostnames (tu dominio + `*.vercel.app`) en el panel de hCaptcha.
+- **El correo** (logo, colores, estructura) se edita en `api/contact.js`; el logo del encabezado
+  está en `public/email-logo.png`.
 - **WhatsApp** (`WHATSAPP` en `src/data/content.js`): número del botón flotante.
 
 ## Imágenes

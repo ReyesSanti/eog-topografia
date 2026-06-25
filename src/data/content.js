@@ -394,25 +394,17 @@ export const BRAND = {
   slogan: 'Levantando futuro',
 }
 
-// Correo que se muestra en la web (las solicitudes llegan vía Web3Forms a la
-// dirección asociada a la clave de abajo).
+// Correo que se muestra en la web. Las solicitudes se envían por la función
+// serverless (api/contact) y llegan a CONTACT_TO_EMAIL (variable en Vercel).
 export const CONTACT_EMAIL = 'santiagodariog@gmail.com'
 
 // Tope total de adjuntos (subido respecto al límite anterior de 10MB).
 export const MAX_UPLOAD_MB = 25
 
-// Web3Forms: servicio fiable de envío del formulario al correo (verificado).
-// La clave está asociada a santiagodariog@gmail.com. Es PÚBLICA por diseño; lo
-// que la protege es el allowlist de dominios (panel de Web3Forms) + hCaptcha +
-// honeypot. El plan gratuito NO adjunta binarios, por eso enviamos la lista de
-// nombres de los archivos.
-export const WEB3FORMS_ACCESS_KEY = '21754d3c-1237-4ac8-a720-8205ca5e97f9'
-
-// hCaptcha (anti-bots). En el plan GRATUITO de Web3Forms se usa su SITE KEY
-// compartida; Web3Forms verifica el token automáticamente (no hay que configurar
-// ninguna secret ni panel). Usar llaves propias de hCaptcha es función Pro.
-// Ref: https://docs.web3forms.com → Spam Protection → hCaptcha.
-export const HCAPTCHA_SITE_KEY = '50b2fe65-b00b-4b9e-ad62-3ba471098be2'
+// hCaptcha (anti-bots). La SITE KEY es pública (va aquí). La SECRET va SOLO en
+// las variables de entorno de Vercel (HCAPTCHA_SECRET), nunca en el código; la
+// función api/contact la usa para verificar el token del lado servidor.
+export const HCAPTCHA_SITE_KEY = '1004ac42-fc26-4a70-80f2-0148651615de'
 
 // WhatsApp (botón flotante). Número en formato internacional sin "+" ni espacios:
 // Colombia +57 + 322 721 7150.

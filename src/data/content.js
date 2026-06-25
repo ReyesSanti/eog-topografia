@@ -377,13 +377,15 @@ export const serviceOptions = [
   'GNSS / Posicionamiento',
   'Procesamiento de datos',
   'Modelado 3D y curvas de nivel',
+   "Replanteo de puntos",
+   "Catastro de redes",
   'Otro',
 ]
 
 export const contactDetails = {
-  phone: '+57 322 721 7150',
+  phone: '+57 322 721 7140',
   email: 'santiagodariog@gmail.com',
-  location: 'Medellín, Colombia',
+  location: 'Meta, Colombia',
 }
 
 /* Marca y destino de las solicitudes del formulario */

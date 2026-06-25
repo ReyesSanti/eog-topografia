@@ -404,7 +404,7 @@ export const MAX_UPLOAD_MB = 25
 // hCaptcha (anti-bots). La SITE KEY es pública (va aquí). La SECRET va SOLO en
 // las variables de entorno de Vercel (HCAPTCHA_SECRET), nunca en el código; la
 // función api/contact la usa para verificar el token del lado servidor.
-export const HCAPTCHA_SITE_KEY = '1004ac42-fc26-4a70-80f2-0148651615de'
+export const HCAPTCHA_SITE_KEY = '400c9070-a342-4d4a-9c46-d2be57d89566'
 
 // WhatsApp (botón flotante). Número en formato internacional sin "+" ni espacios:
 // Colombia +57 + 322 721 7150.

@@ -3,10 +3,8 @@ import { ArrowLeft, ArrowRight, Crosshair } from 'lucide-react'
 import Seo from '../components/Seo.jsx'
 import Eyebrow from '../components/Eyebrow.jsx'
 import SectionHeading from '../components/SectionHeading.jsx'
-import Button from '../components/Button.jsx'
 import ContourBackground from '../components/ContourBackground.jsx'
-import CtaBanner from '../components/CtaBanner.jsx'
-import { services, statsEquipo, CheckIcon } from '../data/content.js'
+import { services, CheckIcon } from '../data/content.js'
 
 function ListCard({ title, items, dark = false }) {
   return (
@@ -82,17 +80,14 @@ export default function ServicioDetalle() {
               <p className="mt-3 text-lg font-medium text-accent-dark">{tagline}</p>
               <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-muted">{intro}</p>
 
-              <div className="mt-6 flex flex-wrap items-center gap-4">
-                {precision && (
+              {precision && (
+                <div className="mt-6">
                   <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-sm font-semibold text-accent-dark">
                     <Crosshair className="h-4 w-4" />
                     Precisión {precision}
                   </span>
-                )}
-                <Button to="/contacto" variant="primary" arrow>
-                  Solicitar cotización
-                </Button>
-              </div>
+                </div>
+              )}
             </div>
 
             <div className="overflow-hidden rounded-lg shadow-md">
@@ -139,16 +134,6 @@ export default function ServicioDetalle() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-cream pb-16">
-        <div className="container-x">
-          <CtaBanner
-            title="¿Listo para tu próximo levantamiento?"
-            subtitle="Cuéntanos sobre tu proyecto y recibe una propuesta a la medida."
-            stats={statsEquipo}
-          />
-        </div>
-      </section>
     </>
   )
 }

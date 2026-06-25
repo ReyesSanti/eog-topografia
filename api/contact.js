@@ -115,7 +115,12 @@ export default async function handler(req, res) {
     })
     const verifyJson = await verify.json()
     if (!verifyJson.success) {
-      return res.status(400).json({ success: false, message: 'Verificación anti-bots fallida.' })
+      const codes = (verifyJson['error-codes'] || []).join(', ')
+      console.error('hCaptcha verify failed:', codes || '(sin código)')
+      return res.status(400).json({
+        success: false,
+        message: `Verificación anti-bots fallida${codes ? ` (${codes})` : ''}.`,
+      })
     }
 
     // Envío del correo vía Resend.

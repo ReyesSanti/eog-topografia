@@ -4,6 +4,7 @@ import Eyebrow from '../components/Eyebrow.jsx'
 import SectionHeading from '../components/SectionHeading.jsx'
 import ProjectCard from '../components/ProjectCard.jsx'
 import StatCard from '../components/StatCard.jsx'
+import Seo from '../components/Seo.jsx'
 import { projects, projectBadges, stats, moreProjects } from '../data/content.js'
 
 export default function Proyectos() {
@@ -21,6 +22,11 @@ export default function Proyectos() {
 
   return (
     <>
+      <Seo
+        title="Proyectos de topografía | EOG Topografía SAS"
+        description="Proyectos topográficos realizados por EOG Topografía SAS en Colombia: infraestructura, minería, urbanismo, hidrología y más."
+        path="/proyectos"
+      />
       <section className="bg-white pt-32 pb-16">
         <div className="container-x">
           <header className="grid items-end gap-10 lg:grid-cols-2">

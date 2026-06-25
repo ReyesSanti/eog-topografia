@@ -1,5 +1,6 @@
 import Eyebrow from '../components/Eyebrow.jsx'
 import SectionHeading from '../components/SectionHeading.jsx'
+import Seo from '../components/Seo.jsx'
 import { CONTACT_EMAIL, contactDetails } from '../data/content.js'
 
 function Block({ title, children }) {
@@ -14,6 +15,11 @@ function Block({ title, children }) {
 export default function Privacidad() {
   return (
     <section className="bg-cream pt-32 pb-20">
+      <Seo
+        title="Política de privacidad | EOG Topografía SAS"
+        description="Política de tratamiento de datos personales de EOG Topografía SAS conforme a la Ley 1581 de 2012."
+        path="/privacidad"
+      />
       <div className="container-x max-w-3xl">
         <Eyebrow line>Privacidad</Eyebrow>
         <SectionHeading className="mt-5">Política de tratamiento de datos</SectionHeading>

@@ -3,6 +3,7 @@ import SectionHeading from '../components/SectionHeading.jsx'
 import QuoteForm from '../components/QuoteForm.jsx'
 import FeatureItem from '../components/FeatureItem.jsx'
 import { IconLinkedin, IconInstagram, IconFacebook, IconYoutube } from '../components/icons.jsx'
+import Seo from '../components/Seo.jsx'
 import { contactInfo, contactStrip } from '../data/content.js'
 
 const socials = [IconLinkedin, IconInstagram, IconFacebook, IconYoutube]
@@ -10,6 +11,11 @@ const socials = [IconLinkedin, IconInstagram, IconFacebook, IconYoutube]
 export default function Contacto() {
   return (
     <>
+      <Seo
+        title="Contacto y cotización | EOG Topografía SAS"
+        description="Contáctanos para tu levantamiento topográfico. Cotización rápida — EOG Topografía SAS, Medellín y toda Colombia. Tel. +57 322 721 7150."
+        path="/contacto"
+      />
       <section className="relative overflow-hidden bg-cream pt-32 pb-20">
         {/* Foto del topógrafo a la derecha (detrás del formulario) */}
         <div className="absolute inset-y-0 right-0 hidden w-[36%] lg:block">

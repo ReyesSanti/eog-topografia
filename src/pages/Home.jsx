@@ -1,9 +1,15 @@
 import Button from '../components/Button.jsx'
+import Seo from '../components/Seo.jsx'
 import { heroMini, homeBar } from '../data/content.js'
 
 export default function Home() {
   return (
     <>
+      <Seo
+        title="EOG Topografía SAS | Levantamientos topográficos en Colombia"
+        description="EOG Topografía SAS: levantamientos topográficos de precisión en Medellín y toda Colombia con GPS RTK, estación total, drones RTK y GNSS. Solicita tu cotización."
+        path="/"
+      />
       {/* HERO */}
       <section className="relative flex min-h-screen flex-col overflow-hidden">
         {/* Foto de fondo */}
@@ -11,6 +17,7 @@ export default function Home() {
           <img
             src="/images/hero.jpg"
             alt="Equipo de topografía de EOG: GPS RTK, estación total, dron y maletín sobre un valle al atardecer"
+            fetchPriority="high"
             className="h-full w-full object-cover object-[72%_center] lg:object-center"
           />
           {/* Móvil: degradado vertical que deja ver la foto · Desktop: horizontal */}
@@ -33,8 +40,9 @@ export default function Home() {
             </h1>
 
             <p className="mt-6 max-w-lg text-base leading-relaxed text-white/75 sm:text-lg">
-              Levantamientos topográficos con tecnología de última generación: GPS RTK, estación
-              total, drones RTK y GNSS para datos confiables y decisiones seguras.
+              Levantamientos topográficos en Medellín y toda Colombia con tecnología de última
+              generación: GPS RTK, estación total, drones RTK y GNSS para datos confiables y
+              decisiones seguras.
             </p>
 
             <div className="mt-8 h-px w-16 bg-accent" />

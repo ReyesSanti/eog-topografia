@@ -5,6 +5,7 @@ import ServiceCard from '../components/ServiceCard.jsx'
 import FeatureItem from '../components/FeatureItem.jsx'
 import CtaBanner from '../components/CtaBanner.jsx'
 import Button from '../components/Button.jsx'
+import Seo from '../components/Seo.jsx'
 import {
   services,
   servicesStripLead,
@@ -19,6 +20,11 @@ import {
 export default function Servicios() {
   return (
     <>
+      <Seo
+        title="Servicios de topografía: GPS RTK, drones y GNSS | EOG Topografía SAS"
+        description="Servicios de topografía con tecnología de última generación: GPS RTK, fotogrametría con drones, GNSS, procesamiento y curvas de nivel. EOG Topografía SAS, Colombia."
+        path="/servicios"
+      />
       {/* Cabecera + tarjetas + tira (fondo crema con curvas de nivel) */}
       <section className="relative overflow-hidden bg-cream pt-32 pb-20">
         <ContourBackground

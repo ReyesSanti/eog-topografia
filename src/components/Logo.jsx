@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 // con la bajada "Levantando futuro".
 export default function Logo({ light = false }) {
   return (
-    <Link to="/" className="flex items-center gap-3" aria-label="EOG Topografía — inicio">
+    <Link to="/" className="flex items-center gap-3" aria-label="EOG Topografía SAS — inicio">
       <svg className="h-9 w-9 shrink-0" viewBox="0 0 40 40" aria-hidden="true">
         <path d="M20 6 L34 32 H6 Z" fill="#6f8f2f" />
         <path d="M12.5 18 L24 32 H3 Z" fill="#8fae4d" />
@@ -12,11 +12,11 @@ export default function Logo({ light = false }) {
       </svg>
       <span className="leading-none">
         <span
-          className={`block font-display text-lg font-extrabold tracking-tight ${
+          className={`block whitespace-nowrap font-display text-lg font-extrabold tracking-tight ${
             light ? 'text-white' : 'text-ink'
           }`}
         >
-          <span className="text-accent">EOG</span> TOPOGRAFÍA
+          <span className="text-accent">EOG</span> TOPOGRAFÍA SAS
         </span>
         <span
           className={`block text-[10px] font-medium uppercase tracking-[0.18em] ${

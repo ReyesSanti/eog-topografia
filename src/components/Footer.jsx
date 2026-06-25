@@ -16,8 +16,8 @@ export default function Footer() {
               <path d="M12.5 18 L24 32 H3 Z" fill="#8fae4d" />
             </svg>
             <span className="leading-none">
-              <span className="block font-display text-lg font-extrabold tracking-tight text-white">
-                <span className="text-accent-light">EOG</span> TOPOGRAFÍA
+              <span className="block whitespace-nowrap font-display text-lg font-extrabold tracking-tight text-white">
+                <span className="text-accent-light">EOG</span> TOPOGRAFÍA SAS
               </span>
               <span className="block text-[10px] uppercase tracking-[0.18em] text-white/50">
                 Levantando futuro

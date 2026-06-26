@@ -5,10 +5,10 @@
 // Variables de entorno requeridas (Vercel → Settings → Environment Variables):
 //   RESEND_API_KEY     clave de Resend (https://resend.com/api-keys)
 //   HCAPTCHA_SECRET    secret de hCaptcha (panel de hCaptcha)
-//   CONTACT_TO_EMAIL   (opcional) destino; por defecto santiagodariog@gmail.com
+//   CONTACT_TO_EMAIL   (opcional) destino; por defecto eogtopografiasas@gmail.com
 //   MAIL_FROM          (opcional) remitente; por defecto onboarding@resend.dev
 
-const TO = process.env.CONTACT_TO_EMAIL || 'santiagodariog@gmail.com'
+const TO = process.env.CONTACT_TO_EMAIL || 'eogtopografiasas@gmail.com'
 const FROM = process.env.MAIL_FROM || 'EOG Topografía <onboarding@resend.dev>'
 const LOGO = 'https://eogtopografia.com/email-logo.png'
 

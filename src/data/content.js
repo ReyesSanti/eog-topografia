@@ -463,13 +463,13 @@ export const contactInfo = [
   {
     Icon: Phone,
     label: 'Llámanos',
-    value: '+57 322 721 7150',
+    value: '+57 320 301 9744',
     note: 'Lun - Vie: 8:00 a.m. - 6:00 p.m.',
   },
   {
     Icon: Mail,
     label: 'Escríbenos',
-    value: 'santiagodariog@gmail.com',
+    value: 'eogtopografiasas@gmail.com',
     note: 'Respondemos en menos de 24 horas.',
   },
   {
@@ -606,8 +606,8 @@ export const serviceOptions = [
 ]
 
 export const contactDetails = {
-  phone: '+57 322 721 7150',
-  email: 'santiagodariog@gmail.com',
+  phone: '+57 320 301 9744',
+  email: 'eogtopografiasas@gmail.com',
   location: 'Meta, Colombia',
 }
 
@@ -619,7 +619,7 @@ export const BRAND = {
 
 // Correo que se muestra en la web. Las solicitudes se envían por la función
 // serverless (api/contact) y llegan a CONTACT_TO_EMAIL (variable en Vercel).
-export const CONTACT_EMAIL = 'santiagodariog@gmail.com'
+export const CONTACT_EMAIL = 'eogtopografiasas@gmail.com'
 
 // Tope total de adjuntos (subido respecto al límite anterior de 10MB).
 export const MAX_UPLOAD_MB = 25
@@ -630,7 +630,7 @@ export const MAX_UPLOAD_MB = 25
 export const HCAPTCHA_SITE_KEY = '400c9070-a342-4d4a-9c46-d2be57d89566'
 
 // WhatsApp (botón flotante). Número en formato internacional sin "+" ni espacios:
-// Colombia +57 + 322 721 7150.
+// Colombia +57 + 320 301 9744.
 export const WHATSAPP = {
   number: '573203019744',
   display: '+57 320 301 9744',

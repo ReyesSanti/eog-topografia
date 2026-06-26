@@ -34,7 +34,7 @@ un **correo HTML con la marca** vía **Resend**.
 **Variables de entorno en Vercel** (Project → Settings → Environment Variables; ver `.env.example`):
 - `RESEND_API_KEY` — clave de Resend (https://resend.com/api-keys).
 - `HCAPTCHA_SECRET` — secret de hCaptcha (panel de hCaptcha). Solo en el servidor, nunca en el cliente.
-- `CONTACT_TO_EMAIL` (opcional) — correo destino; por defecto `santiagodariog@gmail.com`.
+- `CONTACT_TO_EMAIL` (opcional) — correo destino; por defecto `eogtopografiasas@gmail.com`.
 - `MAIL_FROM` (opcional) — remitente; por defecto `onboarding@resend.dev`. Para usar
   `contacto@eogtopografia.com`, verifica el dominio en Resend.
 

@@ -13,7 +13,7 @@ export default function Contacto() {
     <>
       <Seo
         title="Contacto y cotización | EOG Topografía SAS"
-        description="Contáctanos para tu levantamiento topográfico. Cotización rápida — EOG Topografía SAS, Meta y toda Colombia. Tel. +57 322 721 7150."
+        description="Contáctanos para tu levantamiento topográfico. Cotización rápida — EOG Topografía SAS, Meta y toda Colombia. Tel. +57 320 301 9744."
         path="/contacto"
       />
       <section className="relative overflow-hidden bg-cream pt-32 pb-20">

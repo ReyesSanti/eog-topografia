@@ -81,7 +81,7 @@ Eslogan: **"Levantando futuro"**. Todo el contenido es en **español (es-CO)**.
 - **Repo:** GitHub `ReyesSanti/eog-topografia`, rama `main`.
 - **Deploy:** `npx vercel --prod` desde la raíz (CLI autenticada + proyecto enlazado en `.vercel/`).
   ⚠️ **El push a GitHub NO despliega solo** (el proyecto Vercel no está conectado al repo). Ver §12.
-- **Correo destino de contacto:** santiagodariog@gmail.com.
+- **Correo destino de contacto:** eogtopografiasas@gmail.com.
 
 ## 2. Stack
 - **Vite 8** + **React 19** (¡usa metadata nativa de React 19!) + **React Router 7** (SPA).
@@ -183,13 +183,13 @@ Exporta arrays/objetos que alimentan las páginas. Edita aquí para cambiar text
 | `contactInfo`, `contactStrip`, `contactDetails` | Contacto/Footer | teléfono, correo, ubicación |
 | `serviceOptions` | QuoteForm | opciones del `<select>` "Tipo de servicio" |
 | `BRAND` | varios | `{ name:'EOG Topografía', slogan:'Levantando futuro' }` |
-| `CONTACT_EMAIL` | QuoteForm/Privacidad/Footer | correo mostrado (santiagodariog@gmail.com) |
+| `CONTACT_EMAIL` | QuoteForm/Privacidad/Footer | correo mostrado (eogtopografiasas@gmail.com) |
 | `MAX_UPLOAD_MB` | QuoteForm | tope de adjuntos (25) |
 | `HCAPTCHA_SITE_KEY` | QuoteForm | **site key PÚBLICA** de hCaptcha (ver §9) |
-| `WHATSAPP` | WhatsAppFloat | `{ number:'573227217150', display, message }` |
+| `WHATSAPP` | WhatsAppFloat | `{ number:'573203019744', display, message }` |
 | `FileCheck2` | re-export de lucide | icono |
 
-> **Teléfono actual:** +57 322 721 7150 · está en `contactInfo`, `contactDetails`, `WHATSAPP`
+> **Teléfono actual:** +57 320 301 9744 · está en `contactInfo`, `contactDetails`, `WHATSAPP`
 > y en el JSON-LD de `index.html`. Si cambia, actualiza los 4 sitios.
 
 ---
@@ -239,7 +239,7 @@ Exporta arrays/objetos que alimentan las páginas. Edita aquí para cambiar text
 |---|---|
 | `RESEND_API_KEY` | clave de Resend (envío del correo) |
 | `HCAPTCHA_SECRET` | secret de hCaptcha (verificación servidor) |
-| `CONTACT_TO_EMAIL` | destino (default santiagodariog@gmail.com) |
+| `CONTACT_TO_EMAIL` | destino (default eogtopografiasas@gmail.com) |
 | `MAIL_FROM` | remitente (default `onboarding@resend.dev`) |
 
 > ⚠️ **GOTCHA hCaptcha:** la `HCAPTCHA_SITE_KEY` (en `content.js`, pública) y el `HCAPTCHA_SECRET`

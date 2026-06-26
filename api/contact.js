@@ -8,6 +8,9 @@
 //   CONTACT_TO_EMAIL   (opcional) destino; por defecto eogtopografiasas@gmail.com
 //   MAIL_FROM          (opcional) remitente; por defecto onboarding@resend.dev
 
+import { Ratelimit } from '@upstash/ratelimit'
+import { Redis } from '@upstash/redis'
+
 const TO = process.env.CONTACT_TO_EMAIL || 'eogtopografiasas@gmail.com'
 const FROM = process.env.MAIL_FROM || 'EOG Topografía <onboarding@resend.dev>'
 const LOGO = 'https://eogtopografia.com/email-logo.png'
@@ -93,6 +96,22 @@ function isRateLimited(ip) {
   return arr.length > RL_MAX
 }
 
+// Rate limit DISTRIBUIDO con Upstash Redis (compartido entre todas las
+// instancias serverless) — protección ante ataques grandes. Solo se activa si
+// están las variables UPSTASH_REDIS_REST_URL y UPSTASH_REDIS_REST_TOKEN en el
+// entorno; si no, cae al limitador en memoria de arriba.
+const upstashReady = Boolean(
+  process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN,
+)
+const ratelimit = upstashReady
+  ? new Ratelimit({
+      redis: Redis.fromEnv(),
+      limiter: Ratelimit.slidingWindow(6, '60 s'),
+      prefix: 'eog-contact',
+      analytics: false,
+    })
+  : null
+
 // Límites de longitud por campo (defensa ante payloads abusivos).
 const LIMITS = {
   nombre: 80,
@@ -114,7 +133,19 @@ export default async function handler(req, res) {
     (req.headers['x-forwarded-for'] || '').toString().split(',')[0].trim() ||
     (req.headers['x-real-ip'] || '').toString() ||
     'unknown'
-  if (isRateLimited(ip)) {
+  let limited
+  if (ratelimit) {
+    try {
+      const r = await ratelimit.limit(`ip:${ip}`)
+      limited = !r.success
+    } catch (err) {
+      console.error('upstash ratelimit error:', err)
+      limited = isRateLimited(ip) // fallback si Upstash falla
+    }
+  } else {
+    limited = isRateLimited(ip)
+  }
+  if (limited) {
     return res
       .status(429)
       .json({ success: false, message: 'Demasiadas solicitudes. Espera un momento e inténtalo de nuevo.' })

@@ -243,6 +243,7 @@ Exporta arrays/objetos que alimentan las páginas. Edita aquí para cambiar text
 | `HCAPTCHA_SECRET` | secret de hCaptcha (verificación servidor) |
 | `CONTACT_TO_EMAIL` | destino (default eogtopografiasas@gmail.com) |
 | `MAIL_FROM` | remitente (default `onboarding@resend.dev`) |
+| `UPSTASH_REDIS_REST_URL` / `_TOKEN` | (opcional) rate limit distribuido (Upstash). Si faltan → limitador en memoria |
 
 > ⚠️ **GOTCHA hCaptcha:** la `HCAPTCHA_SITE_KEY` (en `content.js`, pública) y el `HCAPTCHA_SECRET`
 > (en Vercel) **deben ser del MISMO sitio/cuenta de hCaptcha**, o da error `sitekey-secret-mismatch`.

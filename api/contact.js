@@ -75,9 +75,49 @@ function renderEmail(d) {
 </body></html>`
 }
 
+// Tope de duración de la función (segundos): la función es rápida.
+export const config = { maxDuration: 10 }
+
+// Rate limiting en memoria (por instancia): frena ráfagas de un mismo IP y
+// rechaza el abuso barato, antes de llamar a hCaptcha/Resend. Para protección
+// distribuida fuerte ante ataques, conviene Upstash Redis o el WAF de Vercel.
+const RL_MAX = 6 // solicitudes permitidas
+const RL_WINDOW_MS = 60000 // por minuto
+const hits = new Map() // ip -> timestamps[]
+function isRateLimited(ip) {
+  const now = Date.now()
+  const arr = (hits.get(ip) || []).filter((t) => now - t < RL_WINDOW_MS)
+  arr.push(now)
+  hits.set(ip, arr)
+  if (hits.size > 10000) hits.clear() // evita fuga de memoria
+  return arr.length > RL_MAX
+}
+
+// Límites de longitud por campo (defensa ante payloads abusivos).
+const LIMITS = {
+  nombre: 80,
+  empresa: 80,
+  email: 150,
+  telefono: 25,
+  servicio: 80,
+  mensaje: 2000,
+  archivos: 2000,
+}
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ success: false, message: 'Método no permitido.' })
+  }
+
+  // Rate limit por IP (rechazo temprano del flood).
+  const ip =
+    (req.headers['x-forwarded-for'] || '').toString().split(',')[0].trim() ||
+    (req.headers['x-real-ip'] || '').toString() ||
+    'unknown'
+  if (isRateLimited(ip)) {
+    return res
+      .status(429)
+      .json({ success: false, message: 'Demasiadas solicitudes. Espera un momento e inténtalo de nuevo.' })
   }
 
   try {
@@ -99,6 +139,16 @@ export default async function handler(req, res) {
 
     if (!data.nombre || !data.email || !data.telefono || !data.servicio || !data.mensaje) {
       return res.status(400).json({ success: false, message: 'Faltan campos obligatorios.' })
+    }
+
+    // Validación de tamaño y formato (rechazo barato de payloads abusivos/basura).
+    for (const [k, max] of Object.entries(LIMITS)) {
+      if ((data[k] || '').length > max) {
+        return res.status(400).json({ success: false, message: 'Datos demasiado largos.' })
+      }
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+      return res.status(400).json({ success: false, message: 'Correo no válido.' })
     }
 
     // Verificación de hCaptcha del lado servidor.

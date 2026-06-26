@@ -230,8 +230,10 @@ Exporta arrays/objetos que alimentan las páginas. Edita aquí para cambiar text
   - `archivos` = **lista de NOMBRES** de archivos (no se suben los binarios; el `<input file>` solo lista nombres).
   - `captcha` = token de hCaptcha (widget activo solo si `HCAPTCHA_SITE_KEY` no está vacío).
   - También: checkbox de consentimiento obligatorio, validación `maxLength`/`pattern`.
-- **`api/contact.js`**: honeypot → campos requeridos → **verifica hCaptcha** (`HCAPTCHA_SECRET`) →
-  **envía correo** con `renderEmail()` (HTML branded) vía **Resend** (`RESEND_API_KEY`). Escapa los inputs (anti-inyección).
+- **`api/contact.js`**: **rate limit por IP** (6/min, en memoria) → honeypot → campos requeridos +
+  **validación de tamaño/formato** → **verifica hCaptcha** (`HCAPTCHA_SECRET`) → **envía correo** con
+  `renderEmail()` (HTML branded) vía **Resend** (`RESEND_API_KEY`). Escapa los inputs (anti-inyección).
+  `maxDuration: 10`. Rechazo barato del abuso antes de las llamadas caras (hCaptcha/Resend).
   - **El diseño del correo se edita en `renderEmail()` dentro de `api/contact.js`.** Logo del correo: `public/email-logo.png`.
 
 ### Variables de entorno (Vercel → Settings → Environment Variables; ver `.env.example`)

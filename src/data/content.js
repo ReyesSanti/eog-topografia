@@ -95,6 +95,39 @@ export const services = [
       'Informe técnico (PDF) con metodología',
       'Datos en MAGNA-SIRGAS (origen oficial de Colombia)',
     ],
+    howItWorks:
+      'El GPS RTK trabaja con dos receptores GNSS en conjunto: una estación base sobre un punto conocido y un rover móvil que recorre el terreno. La base calcula el error de la señal satelital y le envía la corrección al rover en tiempo real (por radio o internet/NTRIP), logrando precisión centimétrica al instante, sin esperar procesamiento posterior. También podemos conectarnos a redes de estaciones permanentes (CORS) para trabajar con un solo equipo.',
+    benefits: [
+      'Precisión centimétrica en tiempo real',
+      'Resultados inmediatos en campo (sin post-proceso)',
+      'Mayor rendimiento: más puntos por jornada',
+      'Datos georreferenciados a MAGNA-SIRGAS',
+      'Menos reprocesos y errores',
+    ],
+    process: [
+      { n: '01', title: 'Planificación', desc: 'Definimos el alcance, el sistema de coordenadas y los puntos de control.' },
+      { n: '02', title: 'Toma en campo', desc: 'Medimos con base + rover (o NTRIP) aplicando controles de calidad.' },
+      { n: '03', title: 'Verificación', desc: 'Comprobamos cierres y precisiones en sitio.' },
+      { n: '04', title: 'Entrega', desc: 'Procesamos y entregamos coordenadas, planos e informe técnico.' },
+    ],
+    faq: [
+      {
+        q: '¿Qué precisión real obtengo?',
+        a: 'Entre 1 y 2 cm en planimetría y altimetría, según las condiciones (cobertura satelital y distancia a la base).',
+      },
+      {
+        q: '¿Sirve bajo árboles o cerca de edificios?',
+        a: 'El RTK necesita ver el cielo. En zonas con obstrucción combinamos con estación total para garantizar la precisión.',
+      },
+      {
+        q: '¿En qué sistema de coordenadas entregan?',
+        a: 'En MAGNA-SIRGAS con el origen oficial que corresponda a tu zona en Colombia, o el que requiera tu proyecto.',
+      },
+      {
+        q: '¿Cuánto se demora?',
+        a: 'El trabajo de campo es rápido al ser en tiempo real; los entregables suelen estar listos en pocos días según el tamaño del proyecto.',
+      },
+    ],
   },
   {
     Icon: IconDrone,
@@ -124,6 +157,39 @@ export const services = [
       'Modelo digital de superficie y de terreno (MDS / MDT, GeoTIFF)',
       'Curvas de nivel (DWG / DXF)',
       'Modelo 3D (OBJ) y reporte de volúmenes (PDF)',
+    ],
+    howItWorks:
+      'Planificamos un vuelo automático sobre el área con un dron equipado con GNSS RTK/PPK, que captura cientos de fotografías con alto traslape. Colocamos puntos de control (GCP) medidos con GNSS para amarrar el modelo a coordenadas reales. Luego, por fotogrametría, el software reconstruye el terreno en 3D y genera ortomosaicos, nubes de puntos y modelos de elevación. Es la forma más eficiente de levantar grandes superficies.',
+    benefits: [
+      'Cubre grandes áreas en poco tiempo',
+      'Seguro: sin exponer personal en zonas de riesgo',
+      'Cálculo preciso de volúmenes',
+      'Registro visual del terreno (ortomosaico)',
+      'Modelos 3D reutilizables para diseño y seguimiento',
+    ],
+    process: [
+      { n: '01', title: 'Plan de vuelo', desc: 'Definimos área, altura, traslape y ubicación de los GCP.' },
+      { n: '02', title: 'Vuelo y control', desc: 'Capturamos las imágenes y medimos los puntos de control.' },
+      { n: '03', title: 'Procesamiento', desc: 'Generamos ortomosaico, nube de puntos y MDT/MDS.' },
+      { n: '04', title: 'Entrega', desc: 'Curvas de nivel, volúmenes y modelos en los formatos requeridos.' },
+    ],
+    faq: [
+      {
+        q: '¿Qué precisión tiene la fotogrametría?',
+        a: 'Con puntos de control (GCP) bien distribuidos, entre 2 y 5 cm. Sin GCP, la precisión absoluta baja.',
+      },
+      {
+        q: '¿Pueden calcular volúmenes de material?',
+        a: 'Sí. Es uno de los usos más comunes: acopios, movimientos de tierra y minería, con reporte detallado.',
+      },
+      {
+        q: '¿Necesitan permisos para volar?',
+        a: 'Operamos siguiendo la normativa de la Aerocivil; en zonas controladas gestionamos los permisos correspondientes.',
+      },
+      {
+        q: '¿Sirve para terrenos con vegetación?',
+        a: 'El dron mide la superficie (copa de árboles). Para terreno bajo vegetación densa lo combinamos con levantamiento terrestre.',
+      },
     ],
   },
   {
@@ -155,6 +221,35 @@ export const services = [
       'Monografía/certificado de puntos de control',
       'Reporte de precisión (PDF)',
     ],
+    howItWorks:
+      'El posicionamiento GNSS usa las constelaciones de satélites (GPS, GLONASS, Galileo, BeiDou) para determinar coordenadas con alta exactitud. En modo estático, el receptor observa varios minutos u horas sobre un punto y luego los datos se post-procesan contra estaciones de referencia. Así obtenemos puntos de control geodésico confiables que sirven de base para todo el proyecto y para enlazar a la red oficial MAGNA-SIRGAS.',
+    benefits: [
+      'Base geodésica confiable para todo el proyecto',
+      'Enlace a la red oficial MAGNA-SIRGAS',
+      'Alta exactitud mediante post-proceso',
+      'Ideal para control y monitoreo',
+      'Trazabilidad y respaldo técnico',
+    ],
+    process: [
+      { n: '01', title: 'Reconocimiento', desc: 'Ubicamos y materializamos los puntos de control.' },
+      { n: '02', title: 'Observación', desc: 'Sesiones estáticas con receptores GNSS.' },
+      { n: '03', title: 'Post-proceso', desc: 'Ajuste y enlace a estaciones de referencia.' },
+      { n: '04', title: 'Entrega', desc: 'Coordenadas, monografías e informe de precisión.' },
+    ],
+    faq: [
+      {
+        q: '¿Cuál es la diferencia entre GNSS y GPS RTK?',
+        a: 'El RTK da resultados centimétricos al instante en campo; el GNSS estático/post-proceso busca la máxima exactitud para puntos de control (puede llegar a milimétrica), procesando después.',
+      },
+      {
+        q: '¿Qué es MAGNA-SIRGAS?',
+        a: 'Es el sistema de referencia oficial de Colombia. Enlazar tu proyecto a él garantiza compatibilidad con entidades y catastro.',
+      },
+      {
+        q: '¿Para qué sirven los puntos de control?',
+        a: 'Son la base sobre la que se apoyan los demás levantamientos (RTK, dron, estación total) para que todo quede en el mismo sistema.',
+      },
+    ],
   },
   {
     Icon: IconProcessing,
@@ -184,6 +279,35 @@ export const services = [
       'Capas GIS (SHP / GeoJSON / KML)',
       'Cálculos en Excel (volúmenes, áreas)',
       'Planos y reportes en PDF',
+    ],
+    howItWorks:
+      'Una vez capturada la información en campo, en gabinete la depuramos y procesamos: filtramos puntos, generamos el modelo digital de terreno (MDT), trazamos curvas de nivel, perfiles y secciones, y calculamos áreas y volúmenes. Entregamos planos y modelos listos para que tu equipo de ingeniería diseñe sobre ellos, en el formato (CAD, GIS, LandXML, PDF) que necesites.',
+    benefits: [
+      'Planos y modelos listos para diseño',
+      'Formatos compatibles con tu software',
+      'Cálculos de volúmenes y áreas confiables',
+      'Información ordenada y trazable',
+      'Ahorro de tiempo para tu equipo',
+    ],
+    process: [
+      { n: '01', title: 'Depuración', desc: 'Limpiamos y validamos los datos de campo.' },
+      { n: '02', title: 'Modelado', desc: 'Generamos MDT, curvas, perfiles y secciones.' },
+      { n: '03', title: 'Cálculos', desc: 'Volúmenes, áreas y cantidades de obra.' },
+      { n: '04', title: 'Entrega', desc: 'Planos y modelos en los formatos solicitados.' },
+    ],
+    faq: [
+      {
+        q: '¿En qué software entregan?',
+        a: 'Principalmente AutoCAD/Civil 3D (DWG/DXF) y LandXML; también capas GIS (SHP/GeoJSON/KML) y PDF. Nos adaptamos a tu flujo.',
+      },
+      {
+        q: '¿Pueden procesar datos que ya tengo?',
+        a: 'Sí, podemos depurar y modelar información levantada por terceros para entregarte planos y cálculos consistentes.',
+      },
+      {
+        q: '¿Incluye cálculo de cantidades de obra?',
+        a: 'Sí: volúmenes de corte/relleno, áreas y demás cantidades necesarias para presupuesto y diseño.',
+      },
     ],
   },
 ]

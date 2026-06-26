@@ -106,7 +106,7 @@ Exporta arrays/objetos que alimentan las páginas. Edita aquí para cambiar text
 |---|---|---|
 | `navLinks` | Navbar/Footer | enlaces del menú |
 | `heroMini`, `homeBar` | Home | mini-features del hero / barra inferior |
-| `services` | Servicios + ServicioDetalle | 4 servicios: campos de tarjeta (Icon/title/desc/image/**slug**) + de detalle (tagline, intro, applications, equipment, **deliverables**=formatos, precision) |
+| `services` | Servicios + ServicioDetalle | 4 servicios: campos de tarjeta (Icon/title/desc/image/**slug**) + de detalle (tagline, intro, applications, equipment, **deliverables**=formatos, precision, **howItWorks**, **benefits**, **process**, **faq**) |
 | `servicesStripLead`, `servicesStripItems` | Servicios | tira de confianza |
 | `techDetails`, `processSteps`, `specificServices`, `CheckIcon` | Servicios | sección Tecnología/proceso |
 | `projects`, `moreProjects`, `projectBadges`, `stats` | Proyectos | proyectos + galería + stats |

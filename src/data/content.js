@@ -121,7 +121,7 @@ export const services = [
       },
       {
         q: '¿En qué sistema de coordenadas entregan?',
-        a: 'En MAGNA-SIRGAS con el origen oficial que corresponda a tu zona en Colombia, o el que requiera tu proyecto.',
+        a: 'Siempre en MAGNA-SIRGAS, que es el oficial del país. Manejamos el origen según la región del proyecto y, si tienes que entregar en otro sistema, lo coordinamos contigo.',
       },
       {
         q: '¿Cuánto se demora?',

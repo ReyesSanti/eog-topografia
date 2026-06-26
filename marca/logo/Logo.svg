@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 120" width="460" height="120" role="img" aria-label="EOG Topografía SAS — Levantando futuro">
+  <title>EOG Topografía SAS — logo horizontal</title>
+
+  <!-- Isotipo -->
+  <g transform="translate(8,20) scale(1.6)">
+    <path d="M20 6 L34 32 H6 Z" fill="#6f8f2f"/>
+    <path d="M12.5 18 L24 32 H3 Z" fill="#8fae4d"/>
+    <path d="M20 6 L24.5 14.5 L20 14.5 L15.5 22 Z" fill="#5c7726" opacity="0.65"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="95" y="55"
+        font-family="Manrope, 'Segoe UI', Arial, sans-serif"
+        font-size="30"
+        font-weight="800"
+        letter-spacing="0.3">
+    <tspan fill="#6f8f2f">EOG</tspan>
+    <tspan fill="#262a24"> TOPOGRAFÍA SAS</tspan>
+  </text>
+
+  <!-- Slogan -->
+  <text x="97" y="80"
+        font-family="Inter, 'Segoe UI', Arial, sans-serif"
+        font-size="13"
+        font-weight="600"
+        letter-spacing="4"
+        fill="#6c7065">
+    LEVANTANDO FUTURO
+  </text>
+</svg>

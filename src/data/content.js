@@ -632,9 +632,9 @@ export const HCAPTCHA_SITE_KEY = '400c9070-a342-4d4a-9c46-d2be57d89566'
 // WhatsApp (botón flotante). Número en formato internacional sin "+" ni espacios:
 // Colombia +57 + 322 721 7150.
 export const WHATSAPP = {
-  number: '573227217150',
-  display: '+57 322 721 7150',
-  message: 'Hola, quiero más información sobre sus servicios de topografía.',
-}
+  number: '573203019744',
+  display: '+57 320 301 9744',
+  message: '👋 Hola, Me gustaría recibir más información sobre sus servicios de topografía.',
+};
 
 export { FileCheck2 }

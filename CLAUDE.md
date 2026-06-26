@@ -1,3 +1,70 @@
+# ⚡ MODO EFICIENCIA — INSTRUCCIONES PARA CLAUDE
+
+⚠️ ESTE ARCHIVO ES LA FUENTE PRINCIPAL DE CONTEXTO.  
+NO LEAS TODO EL PROYECTO INNECESARIAMENTE.
+
+## 🧠 REGLAS OBLIGATORIAS
+
+Claude DEBE seguir este flujo SIEMPRE:
+
+1. ✅ Leer primero el **RESUMEN RÁPIDO**
+2. ✅ Intentar responder SOLO con este archivo
+3. ✅ Leer otros archivos SOLO si es estrictamente necesario
+4. ❌ NO escanear todo el repositorio
+5. ❌ NO abrir múltiples archivos sin razón clara
+
+---
+
+## 🚫 PROHIBIDO
+- Releer todo el proyecto “por si acaso”
+- Ignorar este archivo
+- Tomar decisiones sin revisar aquí primero
+- Explorar carpetas completas sin necesidad
+
+---
+
+## ✅ OBLIGATORIO
+- Usar CLAUDE.md como “fuente de verdad”
+- Mantener coherencia con este documento
+- Minimizar lecturas externas
+- Ser eficiente en cada tarea
+
+---
+
+## 🔁 SINCRONIZACIÓN AUTOMÁTICA
+
+⚠️ CADA CAMBIO EN EL PROYECTO REQUIERE:
+
+Claude DEBE:
+
+1. Actualizar CLAUDE.md
+2. Modificar SOLO las secciones necesarias
+3. Mantener el RESUMEN actualizado
+4. NO dejar información obsoleta
+
+---
+
+## 🧩 REGLA DE ORO
+
+👉 Si la información está en CLAUDE.md → NO buscar en otro lado  
+👉 Si NO está → buscar lo mínimo indispensable  
+
+---
+
+# 🚀 RESUMEN RÁPIDO (LECTURA OBLIGATORIA)
+
+✅ Proyecto: EOG Topografía SAS (sitio web corporativo)  
+✅ Stack: Vite 8 + React 19 + Tailwind 4 + Vercel  
+✅ Backend: Serverless (`/api/contact`)  
+✅ Idioma: Español (es-CO)  
+✅ Estado: Producción activa  
+
+✅ Reglas clave:
+- NO releer todo el repo
+- Priorizar este archivo SIEMPRE
+- Mantener sincronización automática
+``
+
 # CLAUDE.md — Guía del proyecto (léeme antes de tocar nada)
 
 > Este archivo es el mapa del proyecto para Claude. Está al día. **Léelo primero**

@@ -336,7 +336,7 @@ export const projects = [
   {
     category: 'INFRAESTRUCTURA',
     title: 'Carretera Interregional',
-    location: 'Antioquia, Colombia',
+    location: 'Meta, Colombia',
     desc: 'Levantamiento topográfico con GPS RTK para diseño geométrico y control de obra.',
     tech: 'GPS RTK',
     Icon: IconTripod,
@@ -387,7 +387,7 @@ export const moreProjects = [
   {
     category: 'CONSTRUCCIÓN',
     title: 'Replanteo de edificación',
-    location: 'Antioquia, Colombia',
+    location: 'Meta, Colombia',
     image: '/images/more-construction.jpg',
   },
   {
@@ -475,7 +475,7 @@ export const contactInfo = [
   {
     Icon: MapPin,
     label: 'Visítanos',
-    value: 'Medellín, Colombia',
+    value: 'Meta, Colombia',
     note: 'Atención presencial con cita previa.',
   },
   {
@@ -606,7 +606,7 @@ export const serviceOptions = [
 ]
 
 export const contactDetails = {
-  phone: '+57 322 721 7140',
+  phone: '+57 322 721 7150',
   email: 'santiagodariog@gmail.com',
   location: 'Meta, Colombia',
 }

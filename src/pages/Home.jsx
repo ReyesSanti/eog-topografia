@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <Seo
         title="EOG Topografía SAS | Levantamientos topográficos en Colombia"
-        description="EOG Topografía SAS: levantamientos topográficos de precisión en Medellín y toda Colombia con GPS RTK, estación total, drones RTK y GNSS. Solicita tu cotización."
+        description="EOG Topografía SAS: levantamientos topográficos de precisión en el Meta y toda Colombia con GPS RTK, estación total, drones RTK y GNSS. Solicita tu cotización."
         path="/"
       />
       {/* HERO */}
@@ -40,7 +40,7 @@ export default function Home() {
             </h1>
 
             <p className="mt-6 max-w-lg text-base leading-relaxed text-white/75 sm:text-lg">
-              Levantamientos topográficos en Medellín y toda Colombia con tecnología de última
+              Levantamientos topográficos en el Meta y toda Colombia con tecnología de última
               generación: GPS RTK, estación total, drones RTK y GNSS para datos confiables y
               decisiones seguras.
             </p>

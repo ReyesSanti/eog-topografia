@@ -78,7 +78,9 @@ Sitio web de **EOG Topografía SAS** (empresa de topografía/levantamientos en C
 Eslogan: **"Levantando futuro"**. Todo el contenido es en **español (es-CO)**.
 
 - **Producción:** https://eogtopografia.com (Vercel, dominio activo con HTTPS).
-- **Repo:** GitHub `ReyesSanti/eog-topografia`, rama `main`. **Push a `main` = auto-deploy en Vercel.**
+- **Repo:** GitHub `ReyesSanti/eog-topografia`, rama `main`.
+- **Deploy:** `npx vercel --prod` desde la raíz (CLI autenticada + proyecto enlazado en `.vercel/`).
+  ⚠️ **El push a GitHub NO despliega solo** (el proyecto Vercel no está conectado al repo). Ver §12.
 - **Correo destino de contacto:** santiagodariog@gmail.com.
 
 ## 2. Stack
@@ -269,7 +271,11 @@ Form: honeypot + hCaptcha + validación + consentimiento (Ley 1581/2012, página
 
 ## 12. Despliegue
 - **Vercel** detecta Vite (build `npm run build`, salida `dist`) y aplica `vercel.json`.
-- **Push a `main` → auto-deploy.** Las funciones `api/` se despliegan solas.
+- **Desplegar:** `npx vercel --prod` desde la raíz (la CLI está autenticada como `santiagodariog-9940`
+  y el proyecto `eogtopografia` está enlazado en `.vercel/`). Las funciones `api/` se despliegan igual.
+- ⚠️ **El push a GitHub NO dispara deploy** — el proyecto Vercel NO está conectado al repo. Para
+  habilitar auto-deploy: Vercel → Project `eogtopografia` → Settings → **Git** → conectar
+  `ReyesSanti/eog-topografia`. Mientras no se haga, **hay que correr `npx vercel --prod`** tras cada cambio.
 - Dominio `eogtopografia.com` activo. El correo del formulario sale (FROM `onboarding@resend.dev`)
   hasta verificar el dominio en Resend para usar `contacto@eogtopografia.com`.
 
@@ -291,4 +297,4 @@ Form: honeypot + hCaptcha + validación + consentimiento (Ley 1581/2012, página
 - **No** dupliques meta description/canonical en `index.html` (los pone `Seo.jsx`).
 - Al cambiar **env vars en Vercel** → **Redeploy**.
 - `HCAPTCHA_SITE_KEY` (código) y `HCAPTCHA_SECRET` (Vercel) deben ser **par del mismo sitio** de hCaptcha.
-- Hacer **commit + push a `main`** despliega a producción — confírmalo con el usuario si el cambio es sensible.
+- Para que un cambio salga en vivo hay que **`npx vercel --prod`** (el push a GitHub NO despliega solo). Confírmalo con el usuario si el cambio es sensible.
